@@ -9,7 +9,7 @@ body {
     background-color: #F3F3F3;
 }
 
-.conteudo {
+.content {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
@@ -24,7 +24,7 @@ body {
     margin-bottom: 20px;
 }
 
-.mochila {
+.backpack {
     width: 200px;
     height: 200px;
     background-image: url(./images/Children\ preparing\ their\ backpack-amico\ \(1\).svg);
@@ -33,26 +33,26 @@ body {
     background-position: center;
 }
 
-.adicionar {
+.add {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
     margin-top: 20px;
 }
 
-.adicionar label {
+.add label {
     flex-basis: 100%;
 }
 
-.adicionar input[type="text"],
-.adicionar input[type="number"] {
+.add input[type="text"],
+.add input[type="number"] {
     flex-basis: 100%;
     border: none;
     padding: 10px;
     background-color: #FDFDFD;
 }
 
-.adicionar input[type="submit"] {
+.add input[type="submit"] {
     border: none;
     padding: 10px;
     background-color: #0099FF;
@@ -61,11 +61,11 @@ body {
     transition: background-color 0.2s ease-in-out;
 }
 
-.adicionar input[type="submit"]:hover {
+.add input[type="submit"]:hover {
     background-color: #0077CC;
 }
 
-.lista {
+.list {
     list-style: none;
 }
 
