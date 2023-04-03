@@ -2,7 +2,7 @@ const form = document.getElementById("newItem");
 const list = document.getElementById("list");
 const itens = JSON.parse(localStorage.getItem("itens")) || [];
 
-itens.forEach((element) =>{
+itens.forEach((element) => {
     newElement(element)
 })
 
@@ -17,9 +17,20 @@ form.addEventListener("submit", (event) => {
         "quantity": quantity.value
     }
 
-    newElement(currentItem)
+    const exists = itens.find(element => element.name === name.value)
 
-    itens.push(currentItem)
+    if (exists) {
+        currentItem.id = exists.id
+
+        updateElement(currentItem)
+    } else {
+        currentItem.id = itens.length
+        newElement(currentItem)
+
+        itens.push(currentItem)
+    }
+
+
 
     localStorage.setItem("itens", JSON.stringify(itens))
 
@@ -33,10 +44,13 @@ function newElement(item) {
 
     const itemNumber = document.createElement("strong")
     itemNumber.innerHTML = item.quantity
-
+    itemNumber.dataset.id = item.id
     newItem.appendChild(itemNumber)
     newItem.innerHTML += item.name
-
     list.appendChild(newItem)
 
+}
+
+function updateElement(item) {
+    document.querySelector("[data-id='"+item.id+"']").innerHTML = item.quantity
 }
