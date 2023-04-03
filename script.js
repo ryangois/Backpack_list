@@ -48,11 +48,30 @@ function newElement(item) {
     itemNumber.innerHTML = item.quantity
     itemNumber.dataset.id = item.id
     newItem.appendChild(itemNumber)
+
     newItem.innerHTML += item.name
+
+    newItem.appendChild(deleteElement())
+
     list.appendChild(newItem)
 
 }
 
 function updateElement(item) {
-    document.querySelector("[data-id='"+item.id+"']").innerHTML = item.quantity
+    document.querySelector("[data-id='" + item.id + "']").innerHTML = item.quantity
+}
+
+function deleteElement() {
+    const deleteButton = document.createElement("button")
+    deleteButton.innerText = "X"
+
+    deleteButton.addEventListener("click", function () {
+        deleteCurrentElement(this.parentNode)
+    })
+
+    return deleteButton
+}
+
+function deleteCurrentElement(tag) {
+    tag.remove()
 }
