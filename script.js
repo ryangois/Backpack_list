@@ -23,6 +23,8 @@ form.addEventListener("submit", (event) => {
         currentItem.id = exists.id
 
         updateElement(currentItem)
+
+        itens[exists.id] = currentItem
     } else {
         currentItem.id = itens.length
         newElement(currentItem)
