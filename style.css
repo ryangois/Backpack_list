@@ -94,6 +94,7 @@ body {
     box-sizing: border-box;
     display: inline-flex;
     align-items: center;
+    justify-content: space-between;
     gap: 1em;
     font-size: 20px;
     
@@ -111,4 +112,14 @@ body {
     width: 40px;
     height: 40px;
     Background: #1a98f3;
+}
+
+.delete-button {
+    background-color: #7094ad;
+    width: 40px;
+    height: 40px;
+    color: white;
+    border: none;
+    font-size: 1.2em;
+    border-radius: 50%;
 }
